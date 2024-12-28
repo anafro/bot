@@ -1,9 +1,12 @@
-﻿name: "🇺🇸 English"
+name: "🇺🇸 English"
 tag: "english"
-start:
-    welcome: |
-        Hello, [user_mention]!
-        
-        Welcome to my awesome Telegram bot!
-        Well, it does pretty much nothing, yet you may enjoy the silence.
-        It's still calming after all!
+
+language:
+    select: Please, select your language.
+    selected: |
+        Your language is now set to [language].
+        You can change it by /language command.
+    
+welcome: |
+    Hi, [user_mention]!
+    Welcome!

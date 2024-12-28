@@ -13,7 +13,7 @@ from bot.utils.semantic_indexing import first_value
 @dataclass
 class Language:
     messages: dict
-    language_name: str
+    name: str
 
     def get_message(self, message_key: str, message_placeholders: dict[str, str]) -> str:
         language_message: Optional[str] = get_value_by_dot_key(self.messages, message_key)
@@ -37,7 +37,7 @@ def load_language_messages() -> None:
 
 
 def load_language_message_file(path: str) -> None:
-    with open(path) as yaml_file:
+    with open(path, encoding='utf-8') as yaml_file:
         language_messages = yaml.safe_load(yaml_file)
         language_name = language_messages["name"]
         language_tag = language_messages["tag"]
