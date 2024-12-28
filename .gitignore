@@ -173,3 +173,6 @@ cython_debug/
 # IDE files
 .idea/
 .code/
+
+# Sqlite databases
+*.db
