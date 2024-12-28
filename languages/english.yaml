@@ -1,0 +1,9 @@
+﻿name: "🇺🇸 English"
+tag: "english"
+start:
+    welcome: |
+        Hello, [user_mention]!
+        
+        Welcome to my awesome Telegram bot!
+        Well, it does pretty much nothing, yet you may enjoy the silence.
+        It's still calming after all!

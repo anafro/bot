@@ -11,8 +11,6 @@ class Environment:
 def load_environment_variables() -> Environment:
     is_any_variable_set = dotenv.load_dotenv(encoding='utf-8')
 
-    print(dotenv.dotenv_values(encoding='utf-8'))
-
     if not is_any_variable_set:
         raise ValueError("No env variable set")
 

@@ -5,10 +5,12 @@ from termcolor import colored
 from bot.commands.command_list import command_list
 from bot.environment import load_environment_variables, Environment
 from bot.exception_hooking import initialize_custom_exception_hook
+from bot.localization import load_language_messages
 
 
 def main() -> None:
     initialize_custom_exception_hook()
+    load_language_messages()
     environment: Environment = load_environment_variables()
     application: Application = Application.builder().token(environment.telegram_api_token).build()
 
