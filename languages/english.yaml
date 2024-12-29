@@ -7,6 +7,15 @@ language:
         Your language is now set to [language].
         You can change it by /language command.
     
-welcome: |
-    Hi, [user_mention]!
-    Welcome!
+start: |
+    Hello, [user_mention]!
+    
+    I am Anatoly, a website developer!
+    Now you are using my bot, it's gonna help you to create an order!
+    
+    See my works: [portfolio_link]
+    Order a website: /order
+    
+    Other questions? Contact me:
+    [freelancer_telegram_username]
+    

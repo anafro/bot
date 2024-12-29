@@ -1,10 +1,10 @@
-﻿from telegram import Update, ForceReply
+﻿from telegram import Update
 from telegram.ext import ContextTypes
 
 from bot.commands.language import do_language_command
-from bot.conversation import send_message
-from bot.database.models.user import User, get_user
-from bot.localization import _
+from bot.conversation import send_photo
+from bot.database.models.user import get_user
+from bot.environment import environment
 
 
 async def do_start_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
@@ -14,4 +14,9 @@ async def do_start_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -
     if user_created:
         await do_language_command(update, context)
     else:
-        await send_message(update, context, "welcome", user_mention=telegram_user.mention_markdown())
+        await send_photo(
+            update, context, "start.jpg", "start",
+            user_mention=telegram_user.mention_html(),
+            portfolio_link=environment.portfolio_link,
+            freelancer_telegram_username=environment.freelancer_telegram_username,
+        )

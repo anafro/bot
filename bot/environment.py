@@ -6,6 +6,8 @@ import dotenv
 @dataclass
 class Environment:
     telegram_api_token: str
+    freelancer_telegram_username: str
+    portfolio_link: str
 
 
 def load_environment_variables() -> Environment:
@@ -14,8 +16,11 @@ def load_environment_variables() -> Environment:
     if not is_any_variable_set:
         raise ValueError("No env variable set")
 
-    telegram_api_token = get_environment_variable("TELEGRAM_API_TOKEN")
-    return Environment(telegram_api_token)
+    return Environment(
+        telegram_api_token=get_environment_variable("TELEGRAM_API_TOKEN"),
+        freelancer_telegram_username=get_environment_variable("FREELANCER_TELEGRAM_USERNAME"),
+        portfolio_link=get_environment_variable("PORTFOLIO_LINK"),
+    )
 
 
 def get_environment_variable(variable_name: str) -> str:
@@ -25,3 +30,6 @@ def get_environment_variable(variable_name: str) -> str:
         raise ValueError(f'The required environment variable "{variable_name}" does not exist. Add it to .env file.')
     else:
         return environment_variable
+
+
+environment = load_environment_variables()
