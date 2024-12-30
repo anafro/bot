@@ -3,14 +3,16 @@ from telegram.constants import ParseMode
 from telegram.ext import CallbackContext
 
 from bot.commands.start import do_start_command
-from bot.database.models.user import get_user
-from bot.handler_wrapper import handler
+from bot.database.models.user import get_user, User
+from bot.framework.chat import Chat
+from bot.framework.message_handler_wrapper import message_handler
 from bot.localization import _, languages, set_current_language
 
 
-@handler
-async def handle_language_buttons(update: Update, context: CallbackContext) -> None:
-    user, user_created = get_user(update)
+@message_handler
+async def handle_language_buttons(user: User, chat: Chat) -> None:
+    update = chat.update
+    context = chat.context
     query = update.callback_query
     language_tag = query.data
 
