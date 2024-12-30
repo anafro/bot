@@ -2,7 +2,7 @@
 from telegram.ext import Application, CommandHandler, CallbackQueryHandler
 from termcolor import colored
 
-from bot.button_handlers.button_handler_list import button_handler_list, add_button_handlers
+from bot.message_handlers.button_handler_list import button_handler_list, add_button_handlers
 from bot.commands.command_list import command_list, add_command_handlers
 from bot.database.database_management import create_database_tables
 from bot.environment import environment

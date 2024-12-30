@@ -1,6 +1,6 @@
 ﻿from telegram.ext import Application, CallbackQueryHandler
 
-from bot.button_handlers.language import handle_language_buttons
+from bot.message_handlers.language import handle_language_buttons
 
 
 button_handler_list = [
