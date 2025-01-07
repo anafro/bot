@@ -1,14 +1,14 @@
 ﻿from telegram.ext import Application, CommandHandler
 
+from bot.commands.drafts import do_drafts_command
 from bot.commands.language import do_language_command
-from bot.commands.order import do_order_command
 from bot.commands.start import do_start_command
 
 
 command_list = [
     ("start", do_start_command),
     ("language", do_language_command),
-    ("order", do_order_command),
+    ("drafts", do_drafts_command)
 ]
 
 

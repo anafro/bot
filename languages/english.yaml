@@ -19,3 +19,68 @@ start: |
     Other questions? Contact me:
     [freelancer_telegram_username]
     
+order:
+    start: |
+        🌌 Welcome to Order Wizard!
+        
+        Now I am about to ask you some questions.
+        Please, answer them honestly!
+        
+        If you change your mind, please type /cancel
+        
+    cancel: |
+        Order creation is cancelled!
+        However, note - you can always create a new one: /order
+        
+    created: |
+        <strong>🥂 The order is created!</strong>
+        
+        Max cost is: 50k rubles.
+        I gonna text you in 24 hours about when you gonna your website done.
+        
+        Thank you so much!
+        
+    type:
+        select: |
+            📝 Step 1 / 2. <strong>Website type</strong>
+            
+            Tell me, please, what kind of site would you like?
+            
+            • <strong>A landing</strong> - a site for a company, it may contain the company number, the order form, etc.;
+            • <strong>A platform</strong> - a site with authentication (e.g., an online school, or a blog);
+            • <strong>A portfolio</strong> - a site about a person and their work;
+            • <strong>Something else</strong> - if nothing matches good;
+            
+            Changed your mind? /cancel
+            
+        landing: Landing
+        platform: Platform
+        portfolio: Portfolio
+        other: Something else
+        
+    reference:
+        ask: |
+            📝 Step 2 / 2. <strong>Similar sites</strong>
+            
+            Please, send me links to websites you visually like, and which your site should look like.
+
+            Changed your mind? /cancel
+        
+        keep-asking: |
+            Good! If you have more links - send 'em all!
+            If not, press the button below
+        
+        stop-asking: I don't have any more links
+    
+draft:
+    empty: |
+        There are no order drafts.
+        Create one? /order
+        
+    list: |
+        You have [count] draft(s):
+        
+        [draft_list]
+        
+    item: |
+        · <strong>[type]</strong> with references: [references]

@@ -37,3 +37,16 @@ class Chat:
             **message_placeholders: object
     ) -> None:
         await self.context.bot.send_photo(self.update.effective_chat.id, open(f"./photos/{photo_file_name}", "rb"),  _(message_tag, **message_placeholders), parse_mode=parse_mode)
+
+    def get_pressed_button_data(self) -> str:
+        return self.update.callback_query.data
+
+    @property
+    def storage(self) -> dict[str, str]:
+        return self.context.user_data
+
+    def remember(self, data_tag: str, data: str) -> None:
+        self.context.user_data[data_tag] = data
+
+    def recall(self, data_tag: str) -> Optional[str]:
+        return self.storage.get(data_tag)
